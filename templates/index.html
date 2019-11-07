@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+	<title>快来帮我回家哦</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="/static/css/dog.css"/>
+	<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>	
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script lauguage="javascript" src="/static/js/dog.js"></script>
+     <style>
+     	body
+          {
+               margin:0;
+               padding:0;
+          }
+     </style>
+</head>
+<body>
+	<div class="dog">
+		<a href="http://127.0.0.1:8000/firstcontent/">
+		<div class="dogpicture" style="position: fixed;">
+			<div class="img">
+				<img src="/static/images/dog1.jpg">
+			</div>
+		</a>
+		</div>
+		<div class="dogright" >
+			{% for sturow in pmessage %}
+			   {% if not sturow.sflag %}
+			<div class="views" >
+				<p >姓名:&nbsp&nbsp&nbsp{{sturow.sname}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp住址:&nbsp&nbsp&nbsp{{sturow.saddress}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp快递名称:&nbsp&nbsp&nbsp{{sturow.sexpressad}}</p>
+				<a  href={% url 'app_view_changesflag' sturow.sflag sturow.id %} onclick="checkthis()">送包裹回家</a>
+			</div>
+			   {% endif %}
+			{% endfor %}
+		</div>
+	</div>
+		<script>
+		function checkthis()
+		{
+			alert('谢谢您帮包裹回家哦')
+		}
+		</script>
+</body>
+</html>

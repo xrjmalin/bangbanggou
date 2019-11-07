@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/docu2.css"/>
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script src="/static/js1/sendpackage.js"></script> -->
+</head>
+<body>
+		<a href="http://127.0.0.1:8000/firstcontent/" style="text-decoration:none;">
+            <div class="bodyff">
+        <form method="POST" enctype="multipart/form-data" name="form1">
+        {{sp.as_table}}
+        <button class="bodyffgo" onclick ="sumit()"> 确&nbsp;&nbsp;&nbsp;&nbsp;定</button>
+        <a href={% url 'app_view_spride' setype.value %}> 点我有惊喜哦</a>
+        {% if stus %}
+        <p id="checkstus" > </p>
+        {% endif %}
+        {% if not stus %}
+        <p id="checkfault"></p>
+        {% endif %}
+       </form>
+    </div>
+    </a>
+  <script>
+  function sumit()
+       {
+           var p =document.getElementById("checkfault"); 
+           while(p)
+           {
+               p.innerHTML="小主的帮帮币不够无法提交哦<button class='bodyffgo'><a herf='http://127.0.0.1:8000/firstcontent/checkmessage/'></a> </button>";
+           }
+           if((form1.sname.value!='')&&(form1.sexpressad.value!='')&&(form1.sename.value!=''))
+           {
+            document.getElementById("checkstus").innerHTML="恭喜小主提交成功";
+           }
+       }
+  </script> 
+  <a href="http://127.0.0.1:8000/firstcontent/sendmessage/">
+  <ul class="zhangsanjiayou">
+  {% for m in listurl %}
+  <li>
+      <img src={{m}} alt="">
+  </li>
+  {% endfor%}
+  
+</ul> 
+</a>
+</body>
+</html>

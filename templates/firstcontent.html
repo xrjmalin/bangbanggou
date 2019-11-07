@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <title>帮帮狗首页</title>
+     <link rel="stylesheet" href="/static/fmain.css">
+     <link rel="stylesheet" href="/static/index1.css">
+     
+     <style>
+          body
+          {
+               margin:0;
+               padding:0;
+          }
+          a{text-decoration: none;}
+     </style>
+</head>
+<body>
+     <header>
+          <nav>
+              <ul class="ul">
+                    <li class="li_"><a href="http://127.0.0.1:8000/admin/">后台登录</a></li>
+                    <li class="li_"><a href="http://127.0.0.1:8000/firstcontent/">联系我们</a></li>
+                    <li class="li_"><a href="http://127.0.0.1:8000/login/">登录/注册</a></li>
+                    <li class="li_"><a href="http://127.0.0.1:8000/firstcontent/">首页</a></li>
+                    <li class="stuid_">{{stuid}}|{{stuscore}}</li>
+               </ul> 
+          </nav>
+          <div id="banner">
+               <div class="inner">
+                    <hr class="hr"></hr>
+                    <h1>帮帮狗</h1>
+                    <hr class="hr"></hr>
+                    <p>让校园变得更小</p>
+                    <button class="joinus">加入我们</button>
+                    <div class="card-group">
+                         <div class="card">
+                         <button class="package">
+                                <a href="http://127.0.0.1:8000/firstcontent/sendmessage/">
+                              <h2>帮我的快递回家</h2>
+                              <p>发布您的快递信息</p>
+                              </a>
+                         </button>
+                          <button class="package">
+                                <a href="http://127.0.0.1:8000/firstcontent/checkmessage/">
+                               <h2>我帮谁的快递回家</h2>
+                               <p>帮助领取他人快递</p>
+                               </a>
+                          </button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </header>
+     <div>
+     <div class="pakage-list">
+         <div class="marginc">
+     <div class="recieve">已被接单包裹:</div>
+     <div class="dogright" >
+			{% for sturow in getsendpackagem %}
+			   {% if sturow.sflag %}
+			<div class="views" >
+                <p >姓名:&nbsp&nbsp&nbsp{{sturow.sname}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp住址:&nbsp&nbsp&nbsp{{sturow.saddress}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp快递名称:&nbsp&nbsp&nbsp{{sturow.sexpressad}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp提货码:&nbsp&nbsp&nbsp{{sturow.sename}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp接单人:&nbsp&nbsp&nbsp{{sturow.stuidhelp}}</p>
+                
+                <!-- <a herf={% url 'app_view_finish' sturow.id %} >已完成</a> -->
+               <button><a href={% url 'app_view_finish' sturow.id %}>已完成</a></button> 
+                
+                <button><a href={% url 'app_view_again' sturow.id %}>重新发布</a></button> 
+                <button><a href={% url 'app_view_nofinish' sturow.stuidhelp sturow.id %}>未完成</a></button> 
+            </div>
+			   {% endif %}
+			{% endfor %}
+        </div>
+    </div>
+    <div class="marginc">
+        <div class="recieve">已接单包裹</div>
+        <div class="dogright" >
+            {% for sturow in pcmessage %}
+            {% if sturow.sflag %}
+			<div class="views" >
+                <p >姓名:&nbsp&nbsp&nbsp{{sturow.sname}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp住址:&nbsp&nbsp&nbsp{{sturow.saddress}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp快递名称:&nbsp&nbsp&nbsp{{sturow.sexpressad}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp联系方式:&nbsp&nbsp&nbsp{{sturow.sphone}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                <button><a href={% url 'app_view_notwantdo' sturow.id %}>撤单</a></button> 
+            </div>
+            {% endif%}
+			{% endfor %}
+        </div>
+        </div>
+        <div class="marginc">
+     <div class="recieve">未被接单包裹:</div>
+     <div class="dogright" >
+			{% for sturow in getsendpackagem %}
+			   {% if not sturow.sflag %}
+			<div class="views" >
+				<p >姓名:&nbsp&nbsp&nbsp{{sturow.sname}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp住址:&nbsp&nbsp&nbsp{{sturow.saddress}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp快递名称:&nbsp&nbsp&nbsp{{sturow.sexpressad}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp提货码:&nbsp&nbsp&nbsp{{sturow.sename}}</p>
+			</div>
+			   {% endif %}
+			{% endfor %}
+        </div>
+        </div>
+        </div>
+    </div>
+     <!-- {% block title %}聊天室{% endblock %}
+     {% block content %}
+     <div class="list-group col-md-10 col-md-offset-1 well">
+         <div class="list-group-item">
+             {% for chat in chats %}
+             <h4 class="list-group-item-heading">{{chat.sender}}:{{chat.content}}</h4>
+             <p class="list-group-item-text">{{chat.time}}</p>
+             <input type="hidden" class="chat_id" value="{{chat.id}}"/>
+             <br>
+             {% endfor %}
+         </div>
+     </div>
+     
+     <form id="chatForm" class="form-horizontal panel container" method="POST" action=".">{% csrf_token %}
+         <div class="form-group col-md-10">
+             <textarea type="text" name="content" id="content" value="" class="form-control" id="exampleMessage" placeholder=""></textarea>
+         </div>
+         <div class="form-group col-md-4">
+             <input type="hidden" name="post_type" value="send_chat"/>
+             <input type="submit" class="btn btn-lg btn-primary" value="发送"/>
+         </div>
+     </form>
+     {% endblock %} -->
+          <footer class="footer">版权所有©长沙理工大学</footer>
+
+     <!-- {% block script %}
+     <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script>
+      $(document).ready(function() {  
+         updateMsg();    //更细信息  
+                 //表单 submit 事件  
+         $("#chatForm").submit(function() {  
+             //ajax 提交表单  
+             $.post("./post/",  
+                 $('#chatForm').serialize(),
+                 function(data) {  
+                 $("#content").val("");  //消息发送成功后清空内容框  
+                 //addMsg(xml);    //处理 xml  
+             });  
+             return false;       //阻止表单提交  
+         });  
+     });  
+                   
+     //更新消息  
+     function updateMsg() {  
+         $.post(
+             "./post/", 
+             {
+                 post_type: "get_chat",
+                 last_chat_id: $(".chat_id").last().val()
+             }, 
+             function(data) {  
+                 $('.list-group-item').append(data);    //解析返回的 xml  
+         });  
+         setTimeout("updateMsg()", 1000);        //每秒更新一次  
+     }  
+     </script>
+     {% endblock %} -->
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html long="zh-CN">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+	<link rel="stylesheet" type="text/css" href="/static/css1/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css1/login.css">
+	<link rel="stylesheet" type="text/css" href="/static/css1/bbg2.css">
+	<script src="/static/js1/login.js"></script>
+	<script src="/static/js1/regist.js"></script>
+	<title>注册</title>
+	
+	<style>
+		#Demo{background: url("../static/images1/bg4.jpg") no-repeat center;}
+        #logo{
+        	padding-top: 50px;
+        	padding-left: 68px;
+        }
+	</style>
+</head>
+<body onload="createCode()">
+<div id="Demo">
+		<div id="logo"><img src="../static/images1/3-3.png"></div>
+				<div id="login">
+						<div id="hidden">
+									
+								</div>
+
+						<form method='post' enctype="multipart/form-data" id="login_form" name="form1">
+								{{sf.as_p}}	
+								<p><label >确认密码：</label><input type="password" name="passwordagain" onchange="checkpwd()" /></p>
+								<div id="msg" style="color:red"></div>
+								<span id="myyzm">验证码&nbsp;&nbsp;</span><input type="text" name="yzm-input" id="yzm-input"
+								 />
+								<input type="button" name="yzm" id="yzm" onclick="createCode()" /><em id="yzmt"></em><br/>
+								
+								<input type="submit" value="注&nbsp;&nbsp;&nbsp;&nbsp;册" id="submit" onclick="return check() "/>
+						</form>
+					</div>
+				<div id="hidden2"></div>
+		<div class="clearfix"></div>
+		<div id="login-inform">
+				
+		</div>
+</div>
+</body>
+</html>

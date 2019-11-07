@@ -1,0 +1,65 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	background: url('/static/b1.jpg');
+}
+.bodyff{
+	width: 500px;
+	height: 300px;
+	background: rgba(255,255,255,0.5);
+	margin: 0;
+	margin-top: 180px;
+	color: #d3611e;
+	font-size: 15px;
+	font-weight: bold;
+	float: left;
+}
+.bodyff label{
+	margin-left: 120px;
+	line-height: 38px;
+}
+
+.bodyff input,select{
+	width: 200px;
+	height: 20px;
+	border-radius: 4px;
+	float: right;
+	margin-top: 10px;
+	margin-right: 90px;
+	border-style: none;
+}
+.bodyffgo{
+	margin-left: 200px;
+	margin-top: 10px;
+	width: 100px;
+	height: 40px;
+	background: #d36b24;
+	color: #fff;
+	border:none;
+	font-size: 15px;
+	border-radius: 15px;
+	text-align: center;
+	line-height: 40px;
+}
+
+#checkstus{
+color:#FFF;
+/* display:none; */
+}
+
+.zhangsanjiayou
+{
+	float:right;
+	width: 50%;
+	margin-top: 5%;
+	margin-right: 3%;
+}
+
+.zhangsanjiayou li
+{
+	list-style-type:none;
+	float: left;
+	padding: 10px;
+}

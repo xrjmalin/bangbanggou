@@ -1,0 +1,63 @@
+.pakage-list{
+	width: 100%;
+	/* height: 1000px; */
+	background: #73bfb5;
+	color: #fff;
+	font-family: 微软雅黑;
+}
+.footer{
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 100px;
+	font-family: 微软雅黑;
+	background: #df8682;
+}
+.marginc
+{
+	padding:20px;
+}
+.recieve{
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background: #6e4d46;
+	/* margin-top:170px; */
+}
+.views{
+	width: 1309px;
+	height: 60px;
+	/*line-height: 60px;*/
+	margin-top: 20px;
+}
+.views p{
+	/*line-height: 60px;*/
+	border-bottom: 1px solid #adeae0;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	display: inline-block;
+	width: 1000px;
+	/*margin-left: 20px;*/
+	text-align: center;
+	float: right;
+	margin-right: 20px;
+}
+.views p:hover{
+	background: #e78e88;
+}
+.views button{
+	width: 80px;
+	height: 40px;
+	background:#2395a1;
+	border:none;
+	border-radius: 10px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 10px;
+	display: inline;
+}
+.views button a{
+	color: #fff;
+}

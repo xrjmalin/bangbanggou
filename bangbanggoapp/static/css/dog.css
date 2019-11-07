@@ -1,0 +1,80 @@
+body{
+	width: 100%;
+	height: 100%;
+}
+.dog img{
+	width: 100%;
+	height: 720px;
+	/*position: absolute;*/
+}
+.img{
+	position: absolute;
+	color: rgba(0,0,0,0.5);
+	filter:alpha(opacity=70);
+}
+.img::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: gray;
+	position: absolute;
+	left: 0;
+	opacity: 0.5;
+}
+.dogpicture{
+	position: absolute;
+	width: 600px;
+	height: 100%;
+	/*float: left;*/
+	/*background-color: #000;*/
+	
+}
+.dogright{
+	float: left;
+}
+.views{
+	/*position: absolute;*/
+	height: 100px;
+	width: 900px;
+	float: left;
+	margin-left: 600px;
+	border-bottom: 1px solid gray;
+}
+.views p{
+	float: left;
+	margin-left: 100px;
+	margin-top: 35px;
+}
+.views h3{
+	float: left;
+	color: red;
+	margin-left: 60px;
+	margin-top: 35px;
+}
+.views a{
+	float: left;
+	margin-left: 80px;
+	margin-top: 35px;
+}
+.views1{
+	height: 100px;
+	width: 900px;
+	float: left;
+	margin-left: 600px;
+}
+.views1 p{
+	float: left;
+	margin-left: 100px;
+	margin-top: 35px;
+}
+.views1 h3{
+	float: left;
+	color: red;
+	margin-left: 60px;
+	margin-top: 35px;
+}
+.views1 a{
+	float: left;
+	margin-left: 80px;
+	margin-top: 35px;
+}

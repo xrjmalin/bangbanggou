@@ -1,0 +1,78 @@
+	body{background-color: #9cdae7;}
+
+	#login{width: 500px;
+
+		float: right;
+		margin-top: 180px;
+		margin-right: 80px;
+		font-size: 16px;
+		}
+
+	#mylogin,#myregister{
+		font-size: 22px;
+		color: #fff;
+		font-weight: bold;
+		line-height: 50px;
+		border: none;
+		width: 185px;
+		/*margin-top: 10px;*/
+	height: 50px;
+	}
+	#myregister{background:url("../images1/submit.jpg");
+}
+	#mylogin{	margin-left: -30px;background-color: #22347d;}
+	#login_form{
+		line-height: 43px;
+		padding-top: 135px;
+	}
+	#logo{float: left;
+		width: 228px;
+		height: 74px;}
+		#cfxmm,#xmm,#yhm,#dhh,#zz,#xh,#userpwd,#username{width: 230px;height: 35px;background-color: #e7e7e7; }
+		#yzm-input{width: 118px;height: 25px;background-color: #e7e7e7;}
+		#yzm{float: right;width:74px;margin-top: 12px;margin-right: 234px;height: 30px;
+			background:url("../images1/yzm.jpg");border-color: #fff;}
+			#yzmt{float: right;margin-top: -48px;margin-right: 110px;}
+			#hidden{line-height:48px;position:relative;top: 20px;}
+		#submit,#find{
+	width: 114px;
+	height: 32px;
+	float: left;
+	border:1px solid #22347d;
+	font-size: 18px;
+		color: #fff;
+	margin-top: 14px;
+	border-radius: 4px;
+}
+#submit{
+	background: url("../images1/submit.jpg");
+	margin-left: 62px;
+}
+#find{
+	background: #22347d;}
+#login-inform{
+	color: #e7e7e7;
+	font-size: 13px;
+	margin:200px auto 0;
+	width: 830px;
+	height: 50px;
+	line-height:40px;
+}
+#login-inform p{
+	padding-left: 200px;
+}
+#tj{
+	position: absolute;
+    top: 560px;
+    left: 870px;
+	width: 114px;
+	height: 32px;
+	float: left;
+	border:1px solid #22347d;
+	font-size: 18px;
+		color: #fff;
+	/*margin-top: 36px;*/
+	border-radius: 4px;
+	background: url("../images1/submit.jpg");
+	margin-left: 62px;
+}

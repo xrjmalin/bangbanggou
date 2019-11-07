@@ -1,0 +1,118 @@
+nav
+{
+	background: #ccc;
+	height: 50px;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+}
+#banner
+{
+	background: url(/static/5.jpg) center;
+	height: 750px;
+}
+nav ul
+{
+	list-style:none;
+	margin : 0;
+}
+.stuid_
+{
+	display: inline-block;
+	line-height :50px;
+	float: right;
+	margin-right: 940px;
+}
+nav .ul .li_
+{
+	display: inline-block;
+	line-height :50px;
+	float: right;
+	margin-right: 20px;
+}
+nav ul li a
+{
+	line-height:inherit;
+	text-decoration: none;
+	display :inline-block;
+	height:inherit;
+}
+
+#banner .inner
+{
+	max-width : 600px;
+	text-align :center;
+	margin: 0 auto;
+	position :relative;
+	top :200px;
+	color: #fff;
+}
+
+.hr
+{
+	height:2px;
+	background: #5f87a5;
+	
+}
+#banner .inner h1
+{
+	margin: 0;
+}
+
+.joinus
+{
+	border:none;
+	background-color: #333;
+	color: #eee;
+	padding: 10px;
+	border-radius:20px;
+	transition:all 1s ease;
+}
+.joinus:hover
+{
+	color: #FFF;
+	background-color: #666;
+	padding: 40px;
+	transform:rotate(359.9deg);
+
+}
+
+.textshuoming
+{
+	line-height: 30px;
+}
+
+.card-group
+{
+	padding-top:80px;
+}
+
+.card
+{
+	display:inline-block;
+}
+
+
+
+.package
+{
+	padding: 50px;
+	border-radius:20px;
+	margin: 10px;
+	background: #b3e6e4;
+    color: #fff;
+}
+
+.package a
+{
+	text-decoration: none;
+}
+/* .footer
+{
+	width:100%; 
+	height:10px; 
+	padding: 5px; 
+	background-color: #cccccc;
+	text-align: center;
+} */
